@@ -3,7 +3,7 @@ import { IoIosMenu } from "react-icons/io";
 import { AiOutlineUser, AiOutlineShoppingCart } from "react-icons/ai";
 import CartCountBadge from "./CartCountBadge";
 
-const MobLandingNav = () => {
+const MobLandingNav = ({ setShowCart }) => {
   return (
     <div className="sticky top-0 bg-white z-10">
       <div className="container p-8 lg:hidden">
@@ -17,7 +17,10 @@ const MobLandingNav = () => {
 
           <div className="flex gap-4 text-[30px]">
             <AiOutlineUser />
-            <div className="relative cursor-pointer">
+            <div
+              className="relative cursor-pointer"
+              onClick={() => setShowCart(true)}
+            >
               <AiOutlineShoppingCart />
               <CartCountBadge size="w-[20px] h-[20px]" />
             </div>

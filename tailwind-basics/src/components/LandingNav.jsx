@@ -3,7 +3,7 @@ import { BsSearch } from "react-icons/bs";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import CartCountBadge from "./CartCountBadge";
 
-const LandingNav = () => {
+const LandingNav = ({ setShowCart }) => {
   return (
     <div className="sticky top-0 bg-white z-10">
       <div className="container hidden lg:block">
@@ -25,7 +25,10 @@ const LandingNav = () => {
             <div className="icon_wrapper">
               <AiOutlineUser />
             </div>
-            <div className="icon_wrapper  relative">
+            <div
+              className="icon_wrapper  relative cursor-pointer"
+              onClick={() => setShowCart(true)}
+            >
               <AiOutlineShoppingCart />
               <CartCountBadge size="w-[25px] h-[25px]" />
             </div>
